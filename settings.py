@@ -14,7 +14,7 @@ SESSION_CONFIGS = [
         name='big_push_no_int',
 
         display_name="No Government Intervention",
-        num_demo_participants=2,
+        num_demo_participants=7,
         app_sequence=['bigpush_no_int']
      ),
 ]
