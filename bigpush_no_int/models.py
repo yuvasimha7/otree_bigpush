@@ -19,8 +19,8 @@ This is game of big push
 
 class Constants(BaseConstants):
     name_in_url = 'bigpush_no_int'
-    players_per_group = 2
-    num_rounds = 5
+    players_per_group = 7
+    num_rounds = 10
     instructions_template = 'bigpush_no_int/instructions.html'
     round_instructions_template = 'bigpush_no_int/round_instructions.html'
 
@@ -31,7 +31,7 @@ class Subsession(BaseSubsession):
 
     def creating_session(self):
         if self.round_number==1:
-            self.random_max_rounds = random.randint(2,4)
+            self.random_max_rounds = random.randint(7,10)
         else:
             self.random_max_rounds = self.in_round(self.round_number - 1).random_max_rounds
 

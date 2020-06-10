@@ -3,18 +3,18 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 import random
 
-class preintro(Page):
+class index(Page):
     def is_displayed(self):
         return self.round_number == 1
 
-class Introduction(Page):
+class introduction(Page):
     def is_displayed(self):
         return self.round_number == 1
     'this is big push game'
     form_model = 'player'
     form_fields = ['name','age_player']
 
-class MyPage(Page):
+class myPage(Page):
 
 
     timeout_seconds = 120
@@ -23,7 +23,7 @@ class MyPage(Page):
         if self.subsession.round_number<= self.subsession.random_max_rounds:
 
             if self.round_number==1:
-                self.player.endowment = c(350)
+                self.player.endowment = c(100)
 
             elif self.round_number >1:
                 self.player.endowment = self.player.in_round(self.player.round_number - 1).payoff
@@ -39,7 +39,7 @@ class MyPage(Page):
 
 
 
-class JustWaitPage(WaitPage):
+class justWaitPage(WaitPage):
 
     timeout_seconds = 75
     after_all_players_arrive = 'set_payoffs'
@@ -51,7 +51,7 @@ class roundwaitpage(Page):
     pass
 
 
-class Results(Page):
+class results(Page):
 
 
     def is_displayed(self):
@@ -62,4 +62,4 @@ class final(Page):
         return self.round_number == self.subsession.random_max_rounds
 
     template_name = 'bigpush_no_int/final.html'
-page_sequence = [preintro,Introduction,MyPage,JustWaitPage,roundwaitpage,final]
+page_sequence = [index,introduction,myPage,justWaitPage,roundwaitpage,final]
