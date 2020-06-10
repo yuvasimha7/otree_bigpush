@@ -1,0 +1,108 @@
+{% extends 'otree/WaitPage.html' %}
+{% load otree %}
+{% block title %}{{ title_text }}{% endblock %}
+{% block content %}
+    {{ body_text }}
+    <head>
+<meta charset=utf-8 />
+<title>Random Text Plus Image</title>
+</head>
+<body>
+<p>
+
+</p>
+<p>
+    Some interesting facts for you
+</p>
+  <div id="quote"></div>
+  <script>
+    (function() {
+      var quotes = [
+        {
+          text: "Over the last 50 years, human activities – particularly the burning of fossil fuels – have released sufficient quantities of carbon dioxide and other greenhouse gases to affect the global climate. The atmospheric concentration of carbon dioxide has increased by more than 30% since pre-industrial times, trapping more heat in the lower atmosphere. The resulting changes in the global climate bring a range of risks to health, from deaths in extreme high temperatures to changing patterns of infectious diseases",
+          img:  "https://www.who.int/features/factfiles/climate_change/factfiles_climate_4.jpg"
+
+        },
+        {
+          text: "From the tropics to the arctic, climate and weather have powerful direct and indirect impacts on human life. Weather extremes – such as heavy rains, floods, and disasters like Hurricane Katrina that devastated New Orleans, USA in August 2005 – endanger health as well as destroy property and livelihoods. Approximately 600 000 deaths occurred worldwide as a result of weather-related natural disasters in the 1990s, some 95% of which took place in developing countries",
+          img:  "https://www.who.int/features/factfiles/climate_change/factfiles_climate_1.jpg",
+        },
+        {
+          text: "North Korea and Cuba are the only places you can't buy Coca-Cola.",
+          img:  "https://i1.wp.com/bestlifeonline.com/wp-content/uploads/2019/03/Coke-versus-Pepsi.jpg?resize=1024%2C724&ssl=1 "
+        },
+        {
+          text: "The Canary Islands are named after dogs, not birds",
+          img:  "https://i2.wp.com/bestlifeonline.com/wp-content/uploads/2017/08/Spaniel.jpg?w=1024&ssl=1 "
+        },
+        {
+          text: "Japan is the world's most earthquake-prone country",
+          img:  "https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2018/09/earthquake.jpg?w=1024&ssl=1 "
+        },
+        {
+          text: "If you were to write out every number (one, two, three, etc.), you wouldn't use the letter \"b\" until you reached one billion.",
+          img:  "https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2019/04/numbers.jpg?resize=1024%2C683&ssl=1 "
+        },
+        {
+          text: "Stephen Hawking once hosted a party for time travelers but didn't send the invitations until after the fact.",
+          img:  "https://i2.wp.com/bestlifeonline.com/wp-content/uploads/2018/03/shutterstock_281947238.jpg?w=1024&ssl=1 "
+        },
+        {
+          text: "The word \"Pez\" comes from the German word for peppermint.",
+          img:  "https://i1.wp.com/bestlifeonline.com/wp-content/uploads/2019/03/pez-candy-company-sign.jpg?resize=1024%2C819&ssl=1 "
+        },
+        {
+          text: "Apples, pears, peaches, plums, strawberries, cherries, and almonds all belong to the rose family.",
+          img:  "https://i2.wp.com/bestlifeonline.com/wp-content/uploads/2018/08/fruit-basket.jpg?resize=1024%2C768&ssl=1 "
+        },
+        {
+          text: "In 2015 there were only 21 female heads of state in the entire world",
+          img:  "https://media.globalcitizen.org/thumbnails/36/e3/36e34434-b347-4324-bf58-9ad2f318ac48/g7_women_equality.jpg__1095x730_q85_crop_subsampling-2_upscale.jpg "
+        },
+        {
+          text: " In most countries, women only earn between 60 and 75% of men’s wages - for the same work ",
+          img:  "https://media.globalcitizen.org/thumbnails/f7/92/f7929a43-52a0-42c6-abc0-41b98b5931aa/genderpaygap.jpg__689x300_q85_crop_subsampling-2_upscale.jpg "
+        },
+        {
+          text: "There’s a small city called Sialkot in this South Asian country that produces 40 percent of the world’s soccer balls.",
+          img:  "https://media.farandwide.com/28/f7/28f7ef9b94c646b79847f01bf29ab179.jpeg "
+        },
+        {
+          text: "There are more than 24 time zones around the world.",
+          img:  "https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2019/11/clock-in-bed.jpg?resize=1024%2C683&ssl=1 "
+        },
+        {
+          text: "All giant pandas in zoos around the world are on loan from China",
+          img:  "https://i0.wp.com/bestlifeonline.com/wp-content/uploads/2018/08/panda-bear-with-stick.jpg?w=1024&ssl=1 "
+        },
+        {
+          text: "ONLY THE MALES ARE CALLED PEACOCKS. FEMALES ARE CALLED PEAHENS.",
+          img:  " https://images2.minutemediacdn.com/image/upload/c_fit,f_auto,fl_lossy,q_auto,w_728/v1555992775/shape/mentalfloss/istock_68560287_small.jpg?itok=NLq8z97B"
+        },
+        {
+          text: "It can take a photon 40,000 years to travel from the core of the sun to the surface, but only 8 minutes to travel the rest of the way to earth",
+          img:  "https://i.insider.com/51dd7d296bb3f71d1900000d?width=700&format=jpeg&auto=webp "
+        },
+        {
+          text: "Basically anything that melts can be made into glass. You just have to cool off a molten material before its molecules have time to realign into what they were before being melted",
+          img:  "https://i.insider.com/51dd7d576bb3f7c11f000008?width=700&format=jpeg&auto=webp "
+        },
+        {
+          text: "FLAMINGOS ARE NATURALLY WHITE—THEIR DIET OF BRINE SHRIMP AND ALGAE TURNS THEM PINK.\n",
+          img:  "https://images2.minutemediacdn.com/image/upload/c_fit,f_auto,fl_lossy,q_auto,w_728/v1555992773/shape/mentalfloss/istock_102235113_small.jpg?itok=ytOPzQZr "
+        },
+        {
+          text: "Marie Curie is the only one woman who has been honoured twice, with the 1903 Nobel Prize in Physics and the 1911 Nobel Prize in Chemistry.",
+          img:  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Marie_Curie_c1920.jpg/220px-Marie_Curie_c1920.jpg "
+        },
+
+      ];
+      var quote = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("quote").innerHTML =
+        '<p>' + quote.text + '</p>' +
+        '<img src="' + quote.img + '">';
+    })();
+  </script>
+</body>
+
+{% endblock %}

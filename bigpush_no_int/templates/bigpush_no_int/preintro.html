@@ -1,0 +1,12 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Please enter your details
+{% endblock %}
+
+{% block content %}
+    {% include Constants.instructions_template %}
+    {% next_button %}
+
+{% endblock %}

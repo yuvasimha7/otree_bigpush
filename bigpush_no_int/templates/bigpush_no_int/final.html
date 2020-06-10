@@ -1,0 +1,44 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Game End
+{% endblock %}
+
+{% block content %}
+ <head>
+<meta charset=utf-8 />
+<title>Random Text Plus Image</title>
+</head>
+<body>
+<p>
+
+</p>
+<p>
+    Thank You for your participation
+</p>
+
+   <div id="quote2"></div>
+  <script>
+    (function() {
+      var quotes2 = [
+          {
+              img: "http://www.greenflagaward.org/media/1167/31215-cc_watercolorthankyou1100wtn.jpg"
+          },
+          {
+              img: "http://www.greenflagaward.org/media/1167/31215-cc_watercolorthankyou1100wtn.jpg"
+          },
+          {
+              img: "http://www.greenflagaward.org/media/1167/31215-cc_watercolorthankyou1100wtn.jpg"
+          },
+          ];
+      var quote2 = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("quote2").innerHTML =
+        '<p>' + quote.text + '</p>' +
+        '<img src="' + quote2.img + '">';
+    })();
+  </script>
+</body>
+{% endblock %}
+
+
